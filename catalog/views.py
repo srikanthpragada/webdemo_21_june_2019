@@ -32,7 +32,7 @@ def country_info(request):
 
 def add_publisher(request):
     if request.method == "GET":
-        form = PublisherForm()
+        form = PublisherForm() # Unbound form
         return render(request, 'add_publisher.html', {'form': form})
     else:  # POST request
         form = PublisherForm(request.POST)
