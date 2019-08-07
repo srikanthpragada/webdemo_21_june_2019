@@ -8,3 +8,6 @@ class Employee(models.Model):
     salary = models.IntegerField()
     email = models.EmailField(max_length=50)
 
+    def __str__(self):
+        return self.fullname + "," + self.job
+
