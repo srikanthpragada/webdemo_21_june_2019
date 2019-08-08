@@ -1,7 +1,6 @@
 
 from django.contrib import admin
 from django.urls import path, include
-
 from . import views, emp_views
 
 urlpatterns = [
@@ -9,6 +8,9 @@ urlpatterns = [
     path('country/', views.country_info),
     path('add_publisher/', views.add_publisher),
     path('list_publishers/', views.list_publishers),
-    path('employees/', emp_views.list_employees)
+    path('employees/', emp_views.list_employees),
+    path('addemployee/', emp_views.add_employee),
+    path('deleteemployee/', emp_views.delete_employee),
+    path('editemployee/', emp_views.edit_employee),
 
 ]
