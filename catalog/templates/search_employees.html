@@ -1,0 +1,22 @@
+{% extends "master.html" %}
+{% block body %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        function getEmployees()
+        {
+           $.get("/catalog/getemployees?name=" + $("#name").val(),null,
+                 showEmployees);
+        }
+        // callback function
+        function showEmployees(emplist)
+        {
+            console.log(emplist);
+        }
+
+    </script>
+<h2>Search Employees</h2>
+<input type="text" id="name" placeholder="Name"/>
+<button onclick="getEmployees()">Search</button>
+
+
+{% endblock %}

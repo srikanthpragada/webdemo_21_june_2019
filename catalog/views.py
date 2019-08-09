@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponse
 from datetime import datetime
 from .forms import PublisherForm
 import requests
@@ -61,3 +62,10 @@ def list_publishers(request):
     cur.close()
     con.close()
     return render(request, 'list_publishers.html', {'publishers': rows})
+
+
+def ajax_demo(request):
+    return render(request,'ajax_demo.html')
+
+def send_datetime(request):
+    return HttpResponse(str(datetime.now()))

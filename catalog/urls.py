@@ -12,5 +12,9 @@ urlpatterns = [
     path('addemployee/', emp_views.add_employee),
     path('deleteemployee/', emp_views.delete_employee),
     path('editemployee/', emp_views.edit_employee),
+    path('searchemployees/', emp_views.search_employees),
+    path('getemployees/', emp_views.get_employees),
+    path('ajaxdemo/', views.ajax_demo),
+    path('datetime/', views.send_datetime),
 
 ]
