@@ -7,16 +7,24 @@
            $.get("/catalog/getemployees?name=" + $("#name").val(),null,
                  showEmployees);
         }
+
         // callback function
         function showEmployees(emplist)
         {
-            console.log(emplist);
+            $("#emps").html(""); // clear contents of UL
+            for(var i = 0; i < emplist.length ; i ++)
+            {
+               $("#emps").append("<li>"  +  emplist[i].fullname + "</li>");
+            }
         }
 
     </script>
 <h2>Search Employees</h2>
-<input type="text" id="name" placeholder="Name"/>
+<input type="text" id="name" value="{{empname}}" placeholder="Name"/>
 <button onclick="getEmployees()">Search</button>
+<p/>
+<ul id="emps">
 
+</ul>
 
 {% endblock %}

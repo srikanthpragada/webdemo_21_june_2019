@@ -5,7 +5,16 @@ from .forms import EmployeeForm
 
 
 def search_employees(request):
-    return render(request, 'search_employees.html')
+    # check for cookie  - empname
+    if 'empname' in request.COOKIES:
+        empname = request.COOKIES['empname']
+        print(empname)
+    else:
+        empname = ''
+        print("Cookie not found!")
+
+    return render(request, 'search_employees.html',
+                  {'empname' : empname })
 
 def get_employees(request):
     name = request.GET['name']  # Querystring with name
